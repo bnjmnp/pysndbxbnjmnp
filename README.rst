@@ -13,7 +13,7 @@ My Python sandbox project to try and learn some technologies, including
 Note
 ----
 
-* we cannot do it without a setup.py because of the extra Cython build step, but they might work on this: `<https://github.com/pypa/setuptools/issues/2220>`_
+* One cannot do it without a setup.py because of the extra Cython build step, but people might work on this: `<https://github.com/pypa/setuptools/issues/2220>`_
 
 Resources
 ---------
@@ -37,3 +37,8 @@ Resources
 * `Cython - Interfacing with External C Code <https://cython.readthedocs.io/en/latest/src/userguide/external_C_code.html>`_
 
   * This helps to understand how to call C code from Cython code.
+
+* `Python Documentation - Distributing Python Modules (Legacy version) - 2. Writing the Setup Script <https://docs.python.org/3/distutils/setupscript.html>`
+
+  * As I could not find any documentation about the ``setuptools.Extension`` class I assume it is working the same way the ``distutils.core.Extension`` works.
+  * You may also have a look at `https://docs.python.org/3/distutils/apiref.html#distutils.core.Extension`_
