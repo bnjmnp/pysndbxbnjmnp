@@ -5,3 +5,16 @@ requires = [
     "Cython",
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pysndbxbnjmnp"
+authors = [
+    {name="Benjamin Partzsch", email="benjamin_partzsch@web.com"}
+]
+description = "My sandbox package"
+readme = "README.rst"
+requires-python = ">=3.6"
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
