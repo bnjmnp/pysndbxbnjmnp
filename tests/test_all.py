@@ -10,3 +10,12 @@ def test_version():
 
 def test_add_one():
     assert pysndbxbnjmnp.add_one(1) == 2
+
+
+def test_instance_variable():
+    a = pysndbxbnjmnp.Asdf()
+    b = pysndbxbnjmnp.Asdf()
+    a.instance_variable = 3
+    b.instance_variable = 7
+    assert a.instance_variable == 3
+    assert b.instance_variable == 7
