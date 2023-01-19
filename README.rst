@@ -25,7 +25,9 @@ Resources
 
 * `Setuptools User Guide <https://setuptools.pypa.io/en/latest/userguide/index.html>`_
 
-  * There is a tip for when using Cython in combination with setuptools: `Distributing Extensions compiled with Cython <https://setuptools.pypa.io/en/latest/userguide/distribution.html#distributing-extensions-compiled-with-cython>`_
+  * There is a tip for when using Cython in combination with setuptools: `Distributing Extensions compiled with Cython <https://setuptools.pypa.io/en/latest/userguide/ext_modules.html#distributing-extensions-compiled-with-cython>`_
+
+    * This is why don't use ``cythonize()`` in my ``setup.py``.
 
 * `Scikit HEP - On Packaging <https://scikit-hep.org/developer/packaging>`_
 
@@ -38,7 +40,7 @@ Resources
 
   * This helps to understand how to call C code from Cython code.
 
-* `Python Documentation - Distributing Python Modules (Legacy version) - 2. Writing the Setup Script <https://docs.python.org/3/distutils/setupscript.html>`
+* `Python Documentation - Distributing Python Modules (Legacy version) - 2. Writing the Setup Script <https://docs.python.org/3/distutils/setupscript.html>`_
 
   * As I could not find any documentation about the ``setuptools.Extension`` class I assume it is working the same way the ``distutils.core.Extension`` works.
-  * You may also have a look at `https://docs.python.org/3/distutils/apiref.html#distutils.core.Extension`_
+  * You may also have a look at `<https://docs.python.org/3/distutils/apiref.html#distutils.core.Extension>`_
