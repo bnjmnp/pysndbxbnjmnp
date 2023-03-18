@@ -21,3 +21,7 @@ where = ["src"]
 
 [tool.setuptools.dynamic]
 version = {attr = "pysndbxbnjmnp.__version__"}
+
+# Limit the created wheels for windows to AMD64.
+[tool.cibuildwheel.windows]
+archs = ["AMD64"]
