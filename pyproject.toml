@@ -13,7 +13,7 @@ authors = [
 ]
 description = "My sandbox package"
 readme = "README.rst"
-requires-python = ">=3.6"
+requires-python = ">3.6"
 dynamic = ["version"]
 
 [tool.setuptools.packages.find]
