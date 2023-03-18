@@ -22,6 +22,10 @@ where = ["src"]
 [tool.setuptools.dynamic]
 version = {attr = "pysndbxbnjmnp.__version__"}
 
+[tool.cibuildwheel]
+# Skip building on CPython 3.6 on all platforms - because 3.6 it is causing issues.
+skip = "cp36-*"
+
 # Limit the created wheels for windows to AMD64.
 [tool.cibuildwheel.windows]
 archs = ["AMD64"]
