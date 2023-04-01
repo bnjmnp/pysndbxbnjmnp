@@ -44,3 +44,23 @@ Resources
 
   * As I could not find any documentation about the ``setuptools.Extension`` class I assume it is working the same way the ``distutils.core.Extension`` works.
   * You may also have a look at `<https://docs.python.org/3/distutils/apiref.html#distutils.core.Extension>`_
+
+Current State
+-------------
+
+* Tests are done locally with tox
+
+  * install tox with pip(x)
+
+  * install all Python versions using pyenv
+
+    * install pyenv: `<https://github.com/pyenv/pyenv#automatic-installer>`_
+      * install on ubuntu: libffi-dev liblzma-dev zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev libncurses5-dev libncursesw5-dev libreadline-dev
+
+      * further help on pyenv: `<https://realpython.com/intro-to-pyenv/>`_
+
+    * download and build needed Python versions ``pyenv install 3.7 3.8 3.9``
+
+  * activate the pyenv versions ``pyenv local 3.7 3.8 3.9``
+
+  * run ``tox`` inside the tests directory to test the project againts all specifyed Python versions.
