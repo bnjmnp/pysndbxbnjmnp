@@ -61,6 +61,6 @@ Current State
 
     * download and build needed Python versions ``pyenv install 3.7 3.8 3.9``
 
-  * activate the pyenv versions ``pyenv local 3.7 3.8 3.9``
+    * activate the pyenv versions ``pyenv local 3.7 3.8 3.9``
 
-  * run ``tox`` inside the tests directory to test the project againts all specifyed Python versions.
+  * run ``tox`` inside the tests directory to test the project against all specified Python versions.
