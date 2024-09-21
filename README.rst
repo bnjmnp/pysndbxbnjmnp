@@ -48,7 +48,7 @@ Resources
 Current State
 -------------
 
-* Tests are done locally with tox
+* Tests are done locally with tox - using the package that got uploaded to TestPyPI
 
   * install tox with pip(x)
 
@@ -64,3 +64,46 @@ Current State
     * activate the pyenv versions ``pyenv local 3.7 3.8 3.9``
 
   * run ``tox`` inside the tests directory to test the project against all specified Python versions.
+
+Development Environment Set-Up
+------------------------------
+
+* Create a ``virtualenv`` named ``venv`` from your global Python interpreter.
+
+* Install packages: ``sphinx``, ``build``, ``pytest``, ``tox``
+
+* Activate the ``virtualenv``.
+
+* Create a makefile called ``makefile`` in the root directory and add this code:
+
+  .. code-block:: make
+
+    build:
+      python -m build
+      
+    clean: uninstall
+      -rm -rf pysndbxbnjmnp.egg-info/
+      -rm -rf src/pysndbxbnjmnp.egg-info/
+      -rm -rf src/pysndbxbnjmnp/__pycache__
+      -rm -rf src/pysndbxbnjmnp/pysndbxbnjmnp.cp*
+      -rm src/pysndbxbnjmnp/pysndbxbnjmnp.c
+      -rm -rf build/
+      -rm -rf dist/
+      -rm -rf tests/__pycache__
+      -rm -rf .pytest_cache
+
+    uninstall:
+      python -m pip uninstall -y pysndbxbnjmnp
+
+    install: build
+      python -m pip install -e .
+
+    test: install
+      python -m pytest -v
+
+    .PHONY: build clean uninstall install test
+
+* Now you are ready to run:
+
+  * ``make test`` to build, install and test the project
+  * ``make clean`` to uninstall and delete all compile and test artifacts
