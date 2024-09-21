@@ -50,3 +50,13 @@ def test_version():
     delim = '"' if '"' in first_line_of_init_py else "'"
     version_string_inside_init_py = first_line_of_init_py.split(delim)[1]
     assert pysndbxbnjmnp.__version__ == version_string_inside_init_py
+
+
+def test_struct_factory_function():
+    point = pysndbxbnjmnp.get_point()
+    assert point['x'] == 1
+    assert point['y'] == 2
+
+
+def test_optimized_array_using_function():
+    assert pysndbxbnjmnp.mapping(2) == 55
