@@ -3,4 +3,5 @@ build/
 dist/
 *.egg-info/
 venv/
-src/pysndbxbnjmnp.c
+src/pysndbxbnjmnp/pysndbxbnjmnp.c
+src/pysndbxbnjmnp/pysndbxbnjmnp.cp*
