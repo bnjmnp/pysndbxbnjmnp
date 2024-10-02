@@ -70,36 +70,36 @@ Development Environment Set-Up
 
 * Create a ``virtualenv`` named ``venv`` from your global Python interpreter.
 
-* Install packages: ``sphinx``, ``build``, ``pytest``, ``tox``
+* Install packages: ``cython`` ``sphinx``, ``build``, ``pytest``, ``tox``
 
 * Activate the ``virtualenv``.
 
-* Create a makefile called ``makefile`` in the root directory and add this code:
+* Create a makefile called ``Makefile`` in the root directory and add this code:
 
   .. code-block:: make
 
     build:
-      python -m build
+        python -m build
       
     clean: uninstall
-      -rm -rf pysndbxbnjmnp.egg-info/
-      -rm -rf src/pysndbxbnjmnp.egg-info/
-      -rm -rf src/pysndbxbnjmnp/__pycache__
-      -rm -rf src/pysndbxbnjmnp/pysndbxbnjmnp.cp*
-      -rm src/pysndbxbnjmnp/pysndbxbnjmnp.c
-      -rm -rf build/
-      -rm -rf dist/
-      -rm -rf tests/__pycache__
-      -rm -rf .pytest_cache
+        -rm -rf pysndbxbnjmnp.egg-info/
+        -rm -rf src/pysndbxbnjmnp.egg-info/
+        -rm -rf src/pysndbxbnjmnp/__pycache__
+        -rm -rf src/pysndbxbnjmnp/pysndbxbnjmnp.cp*
+        -rm src/pysndbxbnjmnp/pysndbxbnjmnp.c
+        -rm -rf build/
+        -rm -rf dist/
+        -rm -rf tests/__pycache__
+        -rm -rf .pytest_cache
 
     uninstall:
-      python -m pip uninstall -y pysndbxbnjmnp
+        python -m pip uninstall -y pysndbxbnjmnp
 
-    install: build
-      python -m pip install -e .
+    install:
+        python -m pip install -e .
 
     test: install
-      python -m pytest -v
+        python -m pytest -v
 
     .PHONY: build clean uninstall install test
 
