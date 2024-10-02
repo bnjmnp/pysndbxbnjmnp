@@ -27,10 +27,16 @@ def add_one(number):
     return add(number, 1)
 
 # Example of a cdef class
-cdef class Asdf:
+cdef class CdefAsdf:
     cdef public int instance_variable
 
     def __cinit__(self):
+        self.instance_variable = 0
+
+# Example of a recular Python class
+class Asdf:
+
+    def __init__(self):
         self.instance_variable = 0
 
 # Example of a struct - This can only be used inside Cython code

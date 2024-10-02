@@ -35,10 +35,16 @@ def test_instance_variable():
 
 
 def test_understand_class_asdf():
-    """Demonstrate that cdef classes cannot be changed dynamically."""
-    asdf = pysndbxbnjmnp.Asdf()
+    """Demonstrate that cdef classes cannot be changed dynamically.
+    
+    Whereas a regular Python class can be changed dynamically.
+    """
+    asdf = pysndbxbnjmnp.CdefAsdf()
     with pytest.raises(AttributeError) as exec_info:
         asdf.new_attribute = 3
+
+    asdf = pysndbxbnjmnp.Asdf()
+    asdf.new_attribute = 7
 
 
 def test_version():
