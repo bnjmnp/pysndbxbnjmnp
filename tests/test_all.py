@@ -1,10 +1,9 @@
 
-import os.path
-
-import pysndbxbnjmnp
+import os
 
 import pytest
 
+import pysndbxbnjmnp
 
 
 def test_global():
@@ -60,3 +59,11 @@ def test_struct_factory_function():
 
 def test_optimized_array_using_function():
     assert pysndbxbnjmnp.mapping(2) == 55
+
+
+def test_cm():
+    """Demo and check fo the context manager implementation."""
+    with pysndbxbnjmnp.CmExample() as cm:
+        assert cm.enter_was_called
+        assert not cm.exit_was_called
+    assert cm.exit_was_called

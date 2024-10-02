@@ -47,3 +47,19 @@ def mapping(x):
     # This is the way to go for declaring arrays, a C style declaration is discouraged.
     cdef int[5] mapping_table = [11, 33, 55, 77, 99]  # OK
     return mapping_table[x]
+
+# Example of a context manager
+cdef class CmExample:
+    cdef public bint enter_was_called
+    cdef public bint exit_was_called
+    
+    def __cinit__(self):
+        self.enter_was_called = False
+        self.exit_was_called = False
+
+    def __enter__(self):
+        self.enter_was_called = True
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        self.exit_was_called = True
