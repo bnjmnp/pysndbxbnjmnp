@@ -22,8 +22,12 @@ cpdef enum CheeseState:
 cdef enum Constants:
     BUFFER_SIZE = 32
 
-# Define a Python function that makes use of the add C function.
 def add_one(number):
+    """A Python function that makes use of the add() C function
+    
+    :param int number: Number we want to add 1 to.
+    :return: The input number + 1.
+    """
     return add(number, 1)
 
 # Example of a cdef class
@@ -33,8 +37,11 @@ cdef class CdefAsdf:
     def __cinit__(self):
         self.instance_variable = 0
 
-# Example of a recular Python class
 class Asdf:
+    """Example of a recular Python class
+    
+    :ivar int instance_variable: Demo of a regular instance variable.
+    """
 
     def __init__(self):
         self.instance_variable = 0

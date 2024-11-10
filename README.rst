@@ -107,3 +107,9 @@ Development Environment Set-Up
 
   * ``make test`` to build, install and test the project
   * ``make clean`` to uninstall and delete all compile and test artifacts
+
+# Docs
+
+Use this docstring style: `<https://www.sphinx-doc.org/en/master/usage/domains/python.html#info-field-lists>`_
+
+In order to build the documentation `pysndbxbnjmnp` must be installed into the Python interpreter used.
