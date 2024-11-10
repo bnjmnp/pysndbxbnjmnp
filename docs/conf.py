@@ -6,9 +6,13 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import pysndbxbnjmnp 
+
+
 project = 'pysndbxbnjmnp'
 copyright = '2024, bnjmnp'
 author = 'bnjmnp'
+release = pysndbxbnjmnp .__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
