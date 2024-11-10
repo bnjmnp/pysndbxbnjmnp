@@ -10,6 +10,8 @@ My Python sandbox project to try and learn some technologies, including
 * GitHub Actions
 * later maybe: `scikit-build <https://scikit-build.readthedocs.io/en/latest/index.html>`_
 
+TestPyPI: `<https://test.pypi.org/project/pysndbxbnjmnp/>`_
+
 Note
 ----
 
@@ -55,6 +57,7 @@ Current State
   * install all Python versions using pyenv
 
     * install pyenv: `<https://github.com/pyenv/pyenv#automatic-installer>`_
+
       * install on ubuntu: libffi-dev liblzma-dev zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev libncurses5-dev libncursesw5-dev libreadline-dev
 
       * further help on pyenv: `<https://realpython.com/intro-to-pyenv/>`_
@@ -64,6 +67,12 @@ Current State
     * activate the pyenv versions ``pyenv local 3.7 3.8 3.9``
 
   * run ``tox`` inside the tests directory to test the project against all specified Python versions.
+
+  * Notes:
+
+    * Check the available python versions: ``pyenv versions``
+
+    * Run tox with refreshed virtual environments: ``tox -r`` 
 
 Development Environment Set-Up
 ------------------------------
@@ -108,7 +117,20 @@ Development Environment Set-Up
   * ``make test`` to build, install and test the project
   * ``make clean`` to uninstall and delete all compile and test artifacts
 
-# Docs
+Docs
+----
+
+Specification
+^^^^^^^^^^^^^
+
+* Have documentation in the docs directory written in markdown.
+* Use sphinx for document generation.
+* Have the resulting html hosted on readthedocs.
+* Let sphinx pull the API documentation from the source code.
+* The creation of a release on GitHub should trigger the build and update of a new readthedocs site.
+
+Notes
+^^^^^
 
 Use this docstring style: `<https://www.sphinx-doc.org/en/master/usage/domains/python.html#info-field-lists>`_
 
