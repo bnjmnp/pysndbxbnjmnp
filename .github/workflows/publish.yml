@@ -1,6 +1,6 @@
 name: Build wheels and sdist and upload everything to testPyPI
 
-# This is triggerd upon creating a release on GitHub.
+# This is triggered upon creating a release on GitHub.
 on:
   release:
     types: [published]
@@ -12,6 +12,11 @@ jobs:
   upload_pypi:
     needs: [build]
     runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/pysndbxbnjmnp
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
 
     steps:
       - uses: actions/download-artifact@v4
@@ -23,6 +28,4 @@ jobs:
 
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          user: __token__
-          password: ${{ secrets.TEST_PYPI_PYSNDBXBNJMNP_ACCESS_TOKEN }}
           repository_url: https://test.pypi.org/legacy/
