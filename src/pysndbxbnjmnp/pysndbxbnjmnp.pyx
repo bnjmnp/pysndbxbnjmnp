@@ -4,14 +4,24 @@
 # Here we include some selected integer types from the stdint.h header file.
 from libc.stdint cimport uint8_t, int32_t, uint32_t
 
-cdef int a_global_variable = 3022
-
 # Provide an extern declaration for the add C function, like we would need to do that in C code.
 cdef extern int add(int a, int b)
+
+# This module level variable cannot be accessed from the outside
+cdef int a_global_variable = 3022
+
+# This is a regular Python module level variable just initialized with tie internal value
+a_module_level_variable = a_global_variable
 
 # This is how to declare an enum.
 # Note we use "cpdef" telling the Cython compiler we want a Python-like enum.
 cpdef enum CheeseState:
+    """Enum for the state a cheese can be in
+
+    :ivar in HARD: hard.
+    :ivar in SOFT: soft.
+    :ivar in RUNNY: runny.
+    """
     HARD = 1
     SOFT = 2
     RUNNY = 3
@@ -21,6 +31,10 @@ cpdef enum CheeseState:
 # This enum is only available within Cython code.
 cdef enum Constants:
     BUFFER_SIZE = 32
+
+# This only a constant by convention, but it could actually be changed
+# We probably cannot use this constant in cdef functions or classes (inside Cython code)?
+A_PYTHON_MODULE_LEVEL_CONSTANT = 0.1
 
 def add_one(number):
     """A Python function that makes use of the add() C function
@@ -38,7 +52,7 @@ cdef class CdefAsdf:
         self.instance_variable = 0
 
 class Asdf:
-    """Example of a recular Python class
+    """Example of a regular Python class
     
     :ivar int instance_variable: Demo of a regular instance variable.
     """

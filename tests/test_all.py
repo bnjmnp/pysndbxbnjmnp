@@ -11,12 +11,19 @@ def test_global():
     with pytest.raises(AttributeError) as exec_info:
         assert pysndbxbnjmnp.a_global_variable == 3022
 
+    assert pysndbxbnjmnp.a_module_level_variable == 3022
+    pysndbxbnjmnp.a_module_level_variable = 0
 
-def test_enum():
+
+def test_constants():
     """Declaring an enum cpdef (note the p) makes it accessible, but the cdef declared enum Constants is not public."""
     assert pysndbxbnjmnp.CheeseState.SOFT == 2
+    
     with pytest.raises(AttributeError) as exec_info:
         pysndbxbnjmnp.Constants
+
+    assert pysndbxbnjmnp.A_PYTHON_MODULE_LEVEL_CONSTANT == 0.1
+
 
 
 def test_add_one():
