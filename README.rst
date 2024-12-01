@@ -79,7 +79,7 @@ Development Environment Set-Up
 
 * Create a ``virtualenv`` named ``venv`` from your global Python interpreter.
 
-* Install packages: ``cython`` ``sphinx``, ``build``, ``pytest``, ``tox``
+* Install packages: ``cython`` ``sphinx``, ``build``, ``pytest``, ``tox``, ``myst-parser``
 
 * Activate the ``virtualenv``.
 
@@ -128,6 +128,15 @@ Specification
 * Have the resulting html hosted on readthedocs.
 * Let sphinx pull the API documentation from the source code.
 * The creation of a release on GitHub should trigger the build and update of a new readthedocs site.
+
+How to get There
+^^^^^^^^^^^^^^^^
+
+* Run ``sphinx-quickstart``.
+* Add the ``myst_parser`` and ``sphinx.ext.autodoc`` to the ``config.py``'s ``extensions``.
+* Create an ``index.md`` and fill it with content.
+* Connect the rtd account with the GitHub account pysndbxbnjmnp is owned by.
+* Import pysndbxbnjmnp into the rtd account.
 
 Notes
 ^^^^^
