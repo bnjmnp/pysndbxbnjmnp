@@ -9,4 +9,9 @@
 
 .. autoclass:: pysndbxbnjmnp.CheeseState
 
+.. autodata:: pysndbxbnjmnp.a_module_level_variable
+
+.. py:data:: pysndbxbnjmnp.A_PYTHON_MODULE_LEVEL_CONSTANT
+
+    My text.
 ```
