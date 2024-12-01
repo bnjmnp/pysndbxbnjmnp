@@ -16,6 +16,10 @@ readme = "README.rst"
 requires-python = ">3.6"
 dynamic = ["version"]
 
+[project.urls]
+Homepage = "https://github.com/bnjmnp/pysndbxbnjmnp"
+Documentation = "https://pysndbxbnjmnp.readthedocs.io"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
