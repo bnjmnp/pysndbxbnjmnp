@@ -144,3 +144,8 @@ Notes
 Use this docstring style: `<https://www.sphinx-doc.org/en/master/usage/domains/python.html#info-field-lists>`_
 
 In order to build the documentation `pysndbxbnjmnp` must be installed into the Python interpreter used.
+
+With the default webhook enabled on Read the Docs, if I got it right:
+
+* stable: represents the latest documentation from a release, when you tagged it using semantic versioning.
+* latest: represents the latest documentation pushed to GitHub.
